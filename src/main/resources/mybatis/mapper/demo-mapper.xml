@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lichong.greenbook.dao.mybatis.DemoMyBatisDao">
+
+	<resultMap id="resultMap" type="com.lichong.greenbook.entity.Demo">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="address" property="address" />
+		<result column="create_time" property="createTime" />
+		<result column="update_time" property="updateTime" />
+	</resultMap>
+
+	<select id="selectAll" resultMap="resultMap">
+		SELECT * FROM demo
+	</select>
+
+	<select id="selectByParams" resultMap="resultMap"
+			parameterType="com.lichong.greenbook.entity.Demo">
+		SELECT * FROM demo WHERE 1=1
+		<if test="name != null">
+			and NAME = #{name}
+		</if>
+	</select>
+
+	<!--查询返回base地的map集合 -->
+	<select id="getDemoMap" resultType="java.util.HashMap">
+		select * from demo
+	</select>
+
+
+</mapper> 

@@ -1,0 +1,43 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: whitebook
+  datasource: 
+    url: jdbc:mysql://127.0.0.1:3306/whitebook?useCursorFetch=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 50000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 50000
+      connection-test-query: SELECT 1
+  jpa:
+    show-sql: true 
+    properties:
+      hibernate:
+        dialect: com.emdata.common.models.MySQL5DialectUTF8 # 规范方言策略
+    hibernate: 
+      ddl-auto: update ##配置自动建表：updata:没有表新建，有表更新操作,控制台显示建表语句
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy  ## 驼峰命名被自动转化为下划线
+  jackson:
+    default-property-inclusion: non-null
+  redis:
+    host: localhost
+    port: 6379
+  task:
+    execution:
+      pool:
+        core-size: 100 #线程池维护线程的最少数量
+        max-size: 200 #线程池维护线程的最大数量
+        queue-capacity: 10 #缓存队列
+mybatis:
+  configuration:
+    default-fetch-size: 10000
