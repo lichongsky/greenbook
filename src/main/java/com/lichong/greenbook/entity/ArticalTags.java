@@ -5,18 +5,17 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author ：lichongsky
- * @date ：Created in 2019/7/25 11:24
+ * @date ：Created in 2019/7/23 11:23
  */
 @Getter
 @Setter
-@Table(name = "demo")
 @Entity
-public class Demo extends BaseEntity {
-    String name;
-    String address;
+@Table(name = "artical_tags")
+public class ArticalTags extends BaseEntity {
+    int articalId;
+    int articalCatigoryId;
 }

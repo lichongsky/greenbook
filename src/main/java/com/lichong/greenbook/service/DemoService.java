@@ -18,8 +18,10 @@ public interface DemoService extends IBaseService<Demo> {
 
     public void saveUser(@Valid Demo demo);
 
+    @Override
     public Demo findOne(String id);
 
+    @Override
     public void delete(String id);
 
     public List<Demo> findByName(String name);
