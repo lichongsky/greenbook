@@ -14,5 +14,6 @@ import javax.persistence.*;
 @Table(name = "roles")
 public class Role extends BaseEntity {
 
+    @Column(columnDefinition = "varchar(64) comment '50'")
     String name;
 }

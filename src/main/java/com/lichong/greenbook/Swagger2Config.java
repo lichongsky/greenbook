@@ -29,7 +29,7 @@ public class Swagger2Config {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
                 // 为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.lichong.whitebook.controller")).paths(PathSelectors.any()).build();
+                .apis(RequestHandlerSelectors.basePackage("com.lichong.whitebook")).paths(PathSelectors.any()).build();
     }
 
     /**
@@ -40,7 +40,7 @@ public class Swagger2Config {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 // //大标题
-                .title("datacheck-service RESTful API")
+                .title("whitebook RESTful API")
                 // 版本号
                 .version("0.0.1-SNAPSHOT")
                 // .termsOfServiceUrl("NO terms of service")

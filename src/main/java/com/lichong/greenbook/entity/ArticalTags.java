@@ -16,6 +16,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "artical_tags")
 public class ArticalTags extends BaseEntity {
-    int articalId;
-    int articalCatigoryId;
+    @Column(columnDefinition = "varchar(64) comment '文章id'")
+    String articalId;
+    @Column(columnDefinition = "varchar(64) comment '文章分类id'")
+    String articalCatigoryId;
 }

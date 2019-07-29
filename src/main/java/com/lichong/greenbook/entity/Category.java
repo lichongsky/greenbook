@@ -14,5 +14,6 @@ import javax.persistence.*;
 @Entity
 public class Category extends BaseEntity{
 
+    @Column(columnDefinition = "varchar(255) comment '分类名'")
     String name;
 }

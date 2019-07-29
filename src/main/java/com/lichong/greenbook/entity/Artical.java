@@ -30,9 +30,9 @@ public class Artical extends BaseEntity {
     @Column(columnDefinition = "text comment '内容'")
     String summary;
     @Column(columnDefinition = "varchar(64) comment 'categoryId'")
-    int cid;
+    String cid;
     @Column(columnDefinition = "varchar(64) comment 'userId'")
-    int uid;
+    String uid;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     Date publishDate;

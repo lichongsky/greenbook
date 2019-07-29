@@ -18,5 +18,6 @@ import java.sql.Date;
 @Entity
 @Table(name = "artical_catigory")
 public class ArticalCatigory extends BaseEntity {
+    @Column(columnDefinition = "varchar(255) comment '分类名称'")
     String catigoryName;
 }

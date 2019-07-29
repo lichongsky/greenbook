@@ -19,10 +19,14 @@ import java.sql.Date;
 @Entity
 @Table(name = "comments")
 public class Comments extends BaseEntity {
-    int articalId;
+    @Column(columnDefinition = "varchar(64) comment '文章id'")
+    String articalId;
+    @Column(columnDefinition = "varchar(255) comment '评论内容'")
     String content;
+    @Column(columnDefinition = "datetime comment '发表日期'")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     Date publishDate;
-    int userId;
+    @Column(columnDefinition = "varchar(64) comment '用户id'")
+    String userId;
 }

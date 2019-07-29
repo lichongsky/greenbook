@@ -16,9 +16,11 @@ public class RolesUser extends BaseEntity {
     /**
      * 角色id
      */
-    int rid;
+    @Column(columnDefinition = "varchar(64) comment '角色id'")
+    String rid;
     /**
      * 用户id
      */
+    @Column(columnDefinition = "varchar(64) comment '用户id'")
     int uid;
 }

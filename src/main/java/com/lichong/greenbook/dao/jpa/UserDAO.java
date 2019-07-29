@@ -11,6 +11,6 @@ public interface UserDAO extends BaseRepository<User> {
 
     User findByUsername(String uerName);
 
-    User getByUsernameAndPassword(String userName, String passWord);
+    User findByUsernameAndPassword(String userName, String passWord);
 
 }

@@ -55,7 +55,8 @@ public class DemoServiceImpl extends BaseService<Demo> implements DemoService {
         // search.addSearchaFilter("name", SearchOperator.eq, name);
         List<String> list = new ArrayList();
         list.add(name);
-        search.addOrSearchaFilter("name", SearchOperator.in, list);
+//        search.addOrSearchaFilter("name", SearchOperator.in, list);
+        search.addSearchaFilter("name",SearchOperator.eq,list);
         List<Demo> userList4 = super.findAll(search);
         System.out.println(userList4);
 

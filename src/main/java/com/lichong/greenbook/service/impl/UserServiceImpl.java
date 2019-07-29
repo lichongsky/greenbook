@@ -16,9 +16,15 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
 
     @Autowired
     UserDAO userDAO;
+    @Override
+    public User findByUsername(String username) {
+        return userDAO.findByUsername(username);
+    }
 
     @Override
-    public User findByName(String name) {
-        return userDAO.findByUsername(name);
+    public User findByUsernameAndPassword(String username, String password) {
+        return userDAO.findByUsernameAndPassword(username,password);
     }
+
+
 }

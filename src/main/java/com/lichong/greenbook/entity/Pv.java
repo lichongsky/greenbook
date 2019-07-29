@@ -22,6 +22,8 @@ public class Pv extends BaseEntity {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     Date countDate;
+    @Column(columnDefinition = "int(11) comment 'page view count'")
     int pv;
-    int uid;
+    @Column(columnDefinition = "varchar(64) comment '用户id'")
+    String uid;
 }

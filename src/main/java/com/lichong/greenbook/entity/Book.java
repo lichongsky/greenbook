@@ -24,12 +24,18 @@ public class Book extends BaseEntity {
     @GenericGenerator(name = "hibernate-uuid",strategy = "com.emdata.common.hibernate.UUIDSequence")
     private Category categoryId;
 
+    @Column(columnDefinition = "varchar(255) comment '封面图片url'")
     String cover;
+    @Column(columnDefinition = "varchar(255) comment '标题'")
     String title;
+    @Column(columnDefinition = "varchar(255) comment '作者'")
     String author;
+    @Column(columnDefinition = "datetime comment '出版日期'")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     Date publishDate;
+    @Column(columnDefinition = "varchar(255) comment '出版社'")
     String press;
+    @Column(columnDefinition = "text comment '简介'")
     String abs;
 }
