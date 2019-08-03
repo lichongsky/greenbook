@@ -47,8 +47,17 @@ public class LoginController extends AbstractController<User, UserVo> {
             userService.save(requestUser);
             return new Result(200);
         }
-
     }
 
+    @CrossOrigin
+    @GetMapping(value = "/checkIsHaveUser")
+    public Result checkIsHaveUser(@RequestParam String userName){
+        User user = userService.findByUsername(userName);
+        if (user != null) {
+            return new Result(200);
+        } else {
+            return new Result(400);
+        }
+    }
 
 }
